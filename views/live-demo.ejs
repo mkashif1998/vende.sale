@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Vende :: Live Demo</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico" />
+
+    <link rel="stylesheet" href="assets/css/backend-plugin.min.css" />
+    <link rel="stylesheet" href="assets/css/backend.css?v=1.0.0" />
+
+    <!--Core CSS -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/core.css"> -->
+    <style>
+      /* -----------------Mobile Screen----------------------------- */
+      #sm-container {
+        width: 100%;
+        /* max-width: 960px; */
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .mobile-frame {
+        position: relative;
+        width: 500px;
+        /* margin-left: 60px; */
+        margin: auto;
+        /* -webkit-all: .2s ease-in-out;
+            -moz-all: .2s ease-in-out;
+            -ms-all: .2s ease-in-out;
+            transition: all .2s ease-in-out; */
+      }
+
+      .mobile-frame > img {
+        position: relative;
+        width: 500px;
+        margin: auto;
+        z-index: 1;
+      }
+
+      .sm-frame-box {
+        position: absolute;
+        top: 92px;
+        left: 55px;
+        z-index: 2;
+        overflow-y: hidden;
+      }
+      /* -----------------Tablete Screen----------------------------- */
+      #md-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .tab-frame {
+        position: relative;
+        width: 1015px;
+        /* margin-left: 60px; */
+        margin: auto;
+        /* -webkit-all .2s ease-in-out;
+            -moz-all .2s ease-in-out;
+            -ms-all .2s ease-in-out;
+            transition: all .2s ease-in-out; */
+      }
+
+      .tab-frame > img {
+        position: relative;
+        width: 1015px;
+        margin: auto;
+        z-index: 1;
+      }
+
+      .md-frame-box {
+        position: absolute;
+        top: 70px;
+        left: 78px;
+        z-index: 2;
+        overflow-y: hidden;
+      }
+      /* -----------------Laptop Screen----------------------------- */
+      #lg-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .pc-frame {
+        position: relative;
+        width: 1250px;
+        margin: auto;
+      }
+
+      .pc-frame > img {
+        position: relative;
+        width: 1250px;
+        margin: auto;
+        z-index: 1;
+      }
+
+      .lg-frame-box {
+        position: absolute;
+        top: 28px;
+        left: 27px;
+        z-index: 2;
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <!-- Wrapper -->
+    <div
+      style="
+        width: 100%;
+        height: 70px;
+        background: #397dbe;
+        margin-bottom: 30px;
+        padding: 10px;
+      "
+    >
+      <div class="d-flex justify-content-between">
+        <div>
+          <h3 class="text-white mt-1">Live Demo</h3>
+        </div>
+        <div class="img-btn">
+          <img
+            class="lg-btn mr-4"
+            src="assets/img/demoscreen/screen.png"
+            width="60px"
+            height="50px"
+          />
+          <img
+            class="md-btn mr-4"
+            src="assets/img/demoscreen/tab.png"
+            width="40px"
+            height="40px"
+          />
+          <img
+            class="sm-btn mr-4"
+            src="assets/img/demoscreen/mobile.png"
+            width="25px"
+            height="30px"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="sm-container">
+      <div class="mobile-frame">
+        <img src="assets/img/demoscreen/mobile.png" />
+        <div class="sm-frame-box">
+          <iframe
+            src="https://distro.rooteddelivery.com/"
+            frameborder="0"
+            style="overflow: hidden"
+            width="390"
+            height="650"
+          ></iframe>
+        </div>
+        <!-- <div id="rotate-btn" type="button">Rotate</div> -->
+      </div>
+    </div>
+    <div id="md-container">
+      <div class="tab-frame">
+        <img src="assets/img/demoscreen/tab.png" />
+        <div class="md-frame-box">
+          <iframe
+            src="https://distro.rooteddelivery.com/"
+            frameborder="0"
+            style="overflow: hidden"
+            width="860"
+            height="570"
+          ></iframe>
+        </div>
+        <!-- <div id="rotate-btn" type="button">Rotate</div> -->
+      </div>
+    </div>
+    <div id="lg-container">
+      <div class="pc-frame">
+        <img src="assets/img/demoscreen/screen.png" />
+        <div class="lg-frame-box">
+          <iframe
+            src="https://distro.rooteddelivery.com/"
+            frameborder="0"
+            style="overflow: hidden"
+            width="1200"
+            height="680"
+          ></iframe>
+        </div>
+        <!-- <div id="rotate-btn" type="button">Rotate</div> -->
+      </div>
+    </div>
+    <!-- /Wrapper -->
+
+    <!-- Side navigation -->
+
+    <!-- /Side navigation -->
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/core.js"></script>
+
+    <script>
+      $("#sm-container").hide();
+      $("#md-container").hide();
+      // $("#lg-container").hide();
+      $(".lg-btn").click(function () {
+        $("#lg-container").show();
+        $("#md-container").hide();
+        $("#sm-container").hide();
+      });
+      $(".md-btn").click(function () {
+        $("#lg-container").hide();
+        $("#md-container").show();
+        $("#sm-container").hide();
+      });
+      $(".sm-btn").click(function () {
+        $("#lg-container").hide();
+        $("#md-container").hide();
+        $("#sm-container").show();
+      });
+    </script>
+  </body>
+</html>

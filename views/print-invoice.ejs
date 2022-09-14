@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        padding: 0 1.5rem;
+        color: #05070b;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+      h3 {
+        text-align: right;
+      }
+      .logo-wrap {
+        max-width: 160px;
+        margin: 0 auto;
+      }
+      img {
+        width: 100%;
+      }
+      .top {
+        margin-top: 15px;
+        text-align: center;
+      }
+      .stocky-content {
+        margin-top: 20px;
+      }
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+      .table-main {
+        margin-top: 1rem;
+        width: 100%;
+      }
+      th,
+      td {
+        border-bottom: 2px dotted #ddd;
+        text-align: left;
+      }
+      td.total {
+        border-top: 3px solid #000;
+      }
+      .text-bolder {
+        font-weight: 700;
+      }
+      tfoot td {
+        border-bottom: none;
+        padding-top: 10px;
+      }
+      .footer {
+        text-align: center;
+        max-width: 215px;
+        margin: 0 auto;
+      }
+    </style>
+    <script type="text/javascript">
+      function printPage() {
+        var divContents = document.documentElement.innerHTML;
+        var printWindow = window.open();
+        printWindow.document.write(divContents);
+        printWindow.document.close();
+        printWindow.print();
+      }
+    </script>
+  </head>
+  <body onload="printPage()">
+    <div class="main">
+      <span
+        style="
+          width: 50%;
+          text-align: left;
+          float: left;
+          font-weight: bold;
+          font-size: 20px;
+        "
+        >Order ID : <%= String(pos.id).padStart(8, '0') %></span
+      >
+      <span
+        style="
+          width: 50%;
+          text-align: right;
+          float: right;
+          font-weight: bold;
+          font-size: 20px;
+        "
+        >Date : <% const d = new Date(); %> <%= String(d.getDate()).padStart(2,
+        '0') + '/' + String(d.getMonth() + 1).padStart(2, '0') + '/' +
+        String(d.getFullYear()).substr(2) %></span
+      >
+      <div class="logo-wrap">
+        <img
+          src="<%= pos.membership.logo_file ?? 'https://rooted-mint.s3.us-east-2.amazonaws.com/vende.png' %>"
+          alt="logo"
+        />
+      </div>
+
+      <div class="stocky-content" style="width: 55%; float: left">
+        <h4>Customer : <%= pos.customer.name %></h4>
+        <h4>Customer ID : <%= pos.customer.user_no %></h4>
+        <h4>Email : <%= pos.customer.email%></h4>
+        <% if(typeof(pos.customer_address) === 'object' && pos.customer_address
+        !== null) { %>
+        <h4>
+          Address : <%= pos.customer_address.address + ', ' +
+          (pos.customer_address.city.city_name ?? '-') + ', ' +
+          pos.customer_address.state + ', ' + pos.customer_address.country %>
+        </h4>
+        <% } if (typeof(pos.customer.phone) === 'string') { %>
+        <h4>Phone : <%=pos.customer.phone%></h4>
+        <% } %>
+      </div>
+
+      <% if(typeof(pos.driver) === 'object' && pos.driver !== null) { %>
+      <div class="stocky-content" style="width: 45%; float: left">
+        <h4>License Retailer Name : <%= pos.membership.dba %></h4>
+        <h4>Address : Oakland, CA</h4>
+        <h4>
+          Driver : <%= pos.driver.name ?? 'Not assigned yet' %> <%=
+          pos.driver.employeeid ?? '' %>
+        </h4>
+        <h4>
+          Dispatcher : <%= pos.membership.manager.name %>, <%=
+          pos.membership.manager.employeeid %>
+        </h4>
+        <% if(pos.driver_signature && pos.customer_signature) { %>
+        <img
+          src="<%= pos.driver_signature ?? '' %>"
+          style="float: left; width: 40%; height: 60px"
+        />
+        <img
+          src="<%= pos.customer_signature ?? '' %>"
+          style="float: left; width: 40%; height: 60px; margin-left: 15%"
+        />
+        <% } %>
+      </div>
+      <% } %>
+
+      <table class="table-main">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pos.items.forEach(function(item){ %>
+          <tr>
+            <td><%= item.product.product_profile.product_name %></td>
+            <td><%= item.quantity %> pc</td>
+            <td><%= (item.price * item.quantity).toFixed(2) %></td>
+          </tr>
+          <% }); %>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Excise Tax</td>
+            <td><%= pos.excise_tax.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Sales Tax</td>
+            <td><%= pos.tax.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Cannabis Business Tax</td>
+            <td><%= pos.cannabis_business_tax.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Discount</td>
+            <td><%= pos.discount.toFixed(2) %></td>
+          </tr>
+          <% if(pos.delivery_charge > 0) { %>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Charge</td>
+            <td><%= pos.delivery_charge.toFixed(2) %></td>
+          </tr>
+          <% } %>
+          <tr>
+            <td></td>
+            <td class="text-bolder">Delivery Fees</td>
+            <td><%= pos.delivery_fees.toFixed(2) %></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="text-bolder total">Grand Total</td>
+            <td class="text-bolder total">
+              $<%= pos.total_amount.toFixed(2) %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="footer">
+        <p class="text-bolder">Thank you for your business!</p>
+        <img src="<%= '/assets/img/bar.svg' %>" alt="bar" />
+      </div>
+    </div>
+  </body>
+</html>

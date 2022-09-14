@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PVX26LF");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <%- include(metaFileName) %>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="<%= config.assetUrl %>/img/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="<%= config.assetUrl %>/css/backend-plugin.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="<%= config.assetUrl %>/css/backend.css?v=1.0.0"
+    />
+
+    <!--Core CSS -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="<%= config.assetUrl %>/css/app.css" />
+    <link
+      id="theme-sheet"
+      rel="stylesheet"
+      href="<%= config.assetUrl %>/css/core.css"
+    />
+    <link
+      id="theme-sheet"
+      rel="stylesheet"
+      href="<%= config.assetUrl %>/css/custom.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231610536-1">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-231610536-1');
+    </script>
+  </head>
+
+  <body class="is-theme-core">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PVX26LF"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <!-- Hero and nav -->
+    <div
+      id="landing-hero"
+      class="hero animated-hero is-relative is-theme-primary has-waves-bottom"
+      data-page-theme="night"
+    >
+      <nav
+        class="navbar navbar-wrapper navbar-fade navbar-light is-transparent"
+      >
+        <div class="container">
+          <!-- Brand -->
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img
+                class=""
+                src="<%= config.assetUrl %>/img/logos/logo.png"
+                alt=""
+              />
+              <img
+                class="dark-logo switcher-logo"
+                src="<%= config.assetUrl %>/img/logos/logo.png"
+                alt=""
+              />
+            </a>
+
+            <!-- Responsive toggle -->
+            <div class="custom-burger" data-target="">
+              <a class="responsive-btn" href="javascript:void(0);">
+                <span class="menu-toggle">
+                  <span class="icon-box-toggle">
+                    <span class="rotate">
+                      <i class="icon-line-top"></i>
+                      <i class="icon-line-center"></i>
+                      <i class="icon-line-bottom"></i>
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- /Responsive toggle -->
+          </div>
+
+          <!-- Navbar menu -->
+          <div class="navbar-menu">
+            <!-- Navbar Start -->
+            <div class="navbar-start">
+              <!-- Navbar item -->
+              <!-- PC Dropdown -->
+              <div class="navbar-start">
+                <!-- Dropdown -->
+                <div
+                  class="navbar-item has-dropdown is-hoverable is-mega is-hidden-mobile"
+                >
+                  <div class="navbar-link">Demo</div>
+                  <div
+                    class="navbar-dropdown is-megamenu animated prefadeInUp fadeInUp"
+                    data-style="width: 18rem;"
+                  >
+                    <div class="mega-inner">
+                      <div class="container">
+                        <div class="columns">
+                          <div class="column">
+                            <a
+                              class="navbar-item is-flex mb-4"
+                              href="/self-demo"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="my-secondary-clr">Self Demo</h5>
+                                <p>So simple you can demo yourself.</p>
+                              </div>
+                            </a>
+                            <a
+                              class="navbar-item is-flex"
+                              href="/schedule-demo"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="my-secondary-clr">Schedule Demo</h5>
+                                <p>We are here to help.</p>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="menu-image is-hidden-mobile" style=" z-index: -1;">
+                        <img 
+                          src="<%= config.assetUrl %>/img/logos/megamenu-core-sm.svg"
+                          data-base-url="<%= config.assetUrl %>/img/logos/megamenu-core"
+                          data-extension=".svg"
+                          alt=""
+                        />
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <!-- Navbar item -->
+              </div>
+              <div class="navbar-start">
+                <!-- Dropdown -->
+                <div
+                  class="navbar-item has-dropdown is-hoverable is-mega is-hidden-mobile"
+                >
+                  <div class="navbar-link">Features</div>
+                  <div
+                    class="navbar-dropdown is-megamenu animated prefadeInUp fadeInUp"
+                    data-style="width: 18rem;"
+                  >
+                    <div class="mega-inner">
+                      <div class="container">
+                        <div class="columns">
+                          <div class="column">
+                            <a
+                              class="navbar-item is-flex mb-4"
+                              href="/point-of-sale"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Point of Sale</h5>
+                                <p>Simple and easy to use.</p>
+                              </div>
+                            </a>
+                            <a class="navbar-item is-flex" href="/delivery">
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Delivery</h5>
+                                <p>Everything you need to begin delivering.</p>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="column">
+                            <a
+                              class="navbar-item is-flex mb-4"
+                              href="/fleet-app"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Fleet App</h5>
+                                <p>Have control while on the road.</p>
+                              </div>
+                            </a>
+                            <a
+                              class="navbar-item is-flex"
+                              href="/product-ordering"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Product Ordering</h5>
+                                <p>Order product from your POS.</p>
+                              </div>
+                            </a>
+                          </div>
+                          <div class="column">
+                            <a
+                              class="navbar-item is-flex mb-4"
+                              href="/ecommerce"
+                            >
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Ecommerce</h5>
+                                <p>Boost sales up to 35%.</p>
+                              </div>
+                            </a>
+                            <a class="navbar-item is-flex" href="/back-office">
+                              <div class="navbar-content">
+                                <h5 class="color-primary">Back Office</h5>
+                                <p>Manage everything in one place.</p>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="navbar-divider" />
+                      <div class="navbar-item is-footer is-hidden-mobile">
+                        <div class="navbar-content">
+                          <div class="level is-mobile">
+                            <div class="level-left">
+                              <div class="level-item">
+                                <h6><strong>Get App</strong></h6>
+                              </div>
+                            </div>
+                            <div class="level-right">
+                              <div class="level-item">
+                                <a
+                                  class="social-link"
+                                  href="https://apps.apple.com/us/developer/compliance-and-logistics-specialists-llc/id1530461340"
+                                  target="_blank"
+                                  ><i class="fa fa-apple"></i
+                                ></a>
+                                <a
+                                  class="social-link ml-5"
+                                  href="https://play.google.com/store/apps/developer?id=Compliance+and+Logistics+Specialists&hl=en_US&gl=US"
+                                  target="_blank"
+                                  ><i class="fa fa-play"></i
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- <div class="menu-image is-hidden-mobile">
+                        <img
+                          src="<%= config.assetUrl %>/img/logos/megamenu-core.svg"
+                          data-base-url="<%= config.assetUrl %>/img/logos/megamenu-core"
+                          data-extension=".svg"
+                          alt=""
+                        />
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <!-- Navbar item -->
+              </div>
+              <!-- Mobile dropdown -->
+              <div class="mobile-drop is-hidden-desktop">
+                <div class="mobile-drop-trigger">
+                  Demo
+                  <i class="material-icons mycursor">keyboard_arrow_right</i>
+                </div>
+                <div class="child-menu">
+                  <ul>
+                    <li>
+                      <a href="/self-demo">Self Demo</a>
+                    </li>
+                    <li>
+                      <a href="/schedule-demo">Schedule Demo</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mobile-drop is-hidden-desktop">
+                <div class="mobile-drop-trigger">
+                  Features
+                  <i class="material-icons mycursor">keyboard_arrow_right</i>
+                </div>
+                <div class="child-menu">
+                  <ul>
+                    <li>
+                      <a href="/point-of-sale">Point of Sale</a>
+                    </li>
+                    <li>
+                      <a href="/delivery">Delivery</a>
+                    </li>
+                    <li>
+                      <a href="/fleet-app">Fleet App</a>
+                    </li>
+                    <li>
+                      <a href="/product-ordering">Product Ordering</a>
+                    </li>
+                    <li>
+                      <a href="/ecommerce">Ecommerce</a>
+                    </li>
+                    <li>
+                      <a href="/back-office">Back Office</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Navbar item -->
+              <a class="navbar-item is-slide" href="/pricing"> Pricing </a>
+              <!-- <a class="navbar-item is-slide" href="/blog">
+                            Blog
+                        </a> -->
+            </div>
+            <!-- Navbar end -->
+            <div class="navbar-end has-hover">
+              <a href="/login" class="navbar-item has-border-right"> Login </a>
+              <div class="separator"></div>
+              <div class="navbar-item mt-1">
+                <!-- <a href="/signup" class="button button-signup is-rounded is-bold primary-btn" >
+                  Get Started</a > -->
+                <a
+                  href="/signup"
+                  type="submit"
+                  class="button button-cta btn-align btn-outlined is-bold light-btn z-index-2"
+                  id="get_started_btn1"
+                >
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>

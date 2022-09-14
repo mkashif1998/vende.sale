@@ -1,0 +1,165 @@
+<!-- Header Satart-->
+<%- include('layout/header') %>
+<!-- Header End-->
+        <!-- Hero caption -->
+        <div id="main-hero" class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class=" column is-6 is-offset-3 is-header-caption is-centered pt-60 pb-60 ">
+                        <h1 class="title main-title">Blog.</h1>
+                        <h2 class="subtitle is-5 light-text">Thoughts and ideas shared to web community</h2>
+                        <br />
+                        <!-- <div class="pricing-picker">
+                            <span  class="is-active">Get Started</span>
+                            <span >Log In</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Blog Single Centered -->
+<div class="section blog-section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
+
+                <% const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; %>
+
+                <!-- Single Post -->
+                <div class="is-single-post">
+                    <div class="featured-post-image">
+                        <img src="<%= blog.image %>" data-demo-src="assets/img/demo/posts/post-1.jpg" style="width: 100%;" >
+                        <div class="post-date">
+                            <div class="post-date-inner">
+                                <span><%= month[(new Date(blog.created_at)).getMonth()] %></span>
+                                <span><%= String(new Date(blog.created_at).getDate()).padStart(2,'0') %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-post-body">
+                        <div class="featured-post-title">
+                            <div class="title-meta">
+                                <h2 class="post-title"><%= blog.title %></h2>
+                                <h4 class="post-subtitle">
+                                    <span>by <a class="author-name" href="#">Vende</a></span>
+                                    <i class="fa fa-circle"></i>
+                                    <span>Posted in <a href="/blog/category/<%= blog.category.slug %>"><%= blog.category.name %></a></span>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <%- blog.description %>
+                        </div>
+
+                        <div class="sharing-links">
+                            <span>Share</span>
+                            <div class="social-links">
+                                <a><i class="fa fa-facebook-f"></i></a>
+                                <a><i class="fa fa-linkedin-in"></i></a>
+                                <a><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="post-tags">
+                            <span>Tags</span>
+                            <div class="tags">
+                                <% blog.tags.forEach(function(tag) { %>
+                                    <a class="tag is-medium" href="/blog/tag/<%= tag.name.replaceAll(' ', '-') %>"><%= tag.name %></a>                                
+                                <% }); %>
+                            </div>
+                        </div>
+
+                        <!--Related Posts-->
+                        <div class="related-posts">
+                            <h3 class="related-posts-head">You might also like</h3>
+
+                            <div class="columns" id="recent-posts"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+$(document).ready(function() {
+
+    async function getRelatedPosts() {
+        try {
+            const response = await axios.post(`<%= config.api.adminApiUrl %>/api/distru/blog/related`, {
+                post_slug: "<%= blog.slug %>",
+                category_slug: "<%= blog.category.slug %>"                
+            });
+
+            let blogs = response.data.posts;
+
+            let blogsHtml = '';
+
+            blogs.forEach(function(blog) {
+                blogsHtml += `<div class="column is-6">
+                        <div class="card blog-grid-item is-related">
+                            <div class="card-image">
+                                <img class="item-featured-image" src="${blog.thumb}" alt="${blog.title}">
+                                <div class="post-date">
+                                    <div class="post-date-inner">
+                                        <span>${ month[(new Date(blog.created_at)).getMonth()]}</span>
+                                        <span>${ String(new Date(blog.created_at).getDate()).padStart(2,'0') }</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="featured-post-title">
+                                    <div class="title-meta">
+                                        <h2 class="post-title">${blog.title}</h2>
+                                        <h4 class="post-subtitle">
+                                            <span>Posted in <a href="/blog/category/${ blog.category.slug }">${ blog.category.name }</a></span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <a class="read-more-link" href="/blog/${ blog.slug }">
+                                    Read More <span>&#10230;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>`;
+            });                
+
+            $("#recent-posts").append(blogsHtml);
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    getRelatedPosts();
+});
+
+    function myFunction(x) {
+    if (x.matches) { 
+        $(".sqs-block-content").css("width","400px");
+        $(".sqs-block-content").css(" overflow-wrap","break-word");
+        $(".sqs-block-content").css("white-space","pre-wrap");
+    } else {
+        $(".sqs-block-content").css("width","550px");
+        $(".sqs-block-content").css(" overflow-wrap","break-word");
+        $(".sqs-block-content").css("white-space","pre-wrap");
+    }
+    }
+
+    var x = window.matchMedia("(max-width: 700px)")
+    myFunction(x) 
+    x.addListener(myFunction)
+</script>
+<!-- Footer Satart-->
+<%- include('layout/footer') %>
+<!-- Footer End-->

@@ -1,0 +1,155 @@
+
+<!--Footer-->
+    <footer class="footer landing-dark-footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <img class="footer-logo square-logo switcher-logo" src="<%= config.assetUrl %>/img/logos/logolight.png" alt="" />
+                    <p class="footer-logo-text is-portrait-padded">
+                        Vende is the most product driven cannabis retail point of sale system. Obsessing over making
+                        sure your workflows get simplified and ensuring your inventory is your number one priority.
+                    </p>
+                    <div style="margin-top: 30px;">
+                        <h6 class="text-white"> Get the app. </h6>
+                        <div class="d-flex justify-content-start mt-3">
+                            <a href="https://apps.apple.com/us/developer/compliance-and-logistics-specialists-llc/id1530461340" target="_blank" class="d-flex justify-content-start align-items-center app-download-btn2">
+                                    <img src="<%= config.assetUrl %>/img/smallicon/apple-light.png" width="30px" height="30px" alt="" />
+                                <span class="ml-1 text-white">
+                                    <h5>App Store</h5>
+                                </span>
+                            </a>
+                            <a href="https://play.google.com/store/apps/developer?id=Compliance+and+Logistics+Specialists&hl=en_US&gl=US" target="_blank" class="d-flex justify-content-start align-items-center app-download-btn2 ml-3">
+                                    <img src="<%= config.assetUrl %>/img/smallicon/google-play-light.png" width="30px" height="30px"
+                                        alt="" />
+                                <span class="ml-1 text-white">
+                                    <h5>Play Store</h5>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-light is-5">Company</h4>
+                    <ul class="footer-menu">
+                        <li><a href="javascript:void(0)">Help</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                        <li><a href="javascript:void(0)">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-light is-5">Platform</h4>
+                    <ul class="footer-menu">
+                        <li><a href="/point-of-sale">Point of Sale </a></li>
+                        <li><a href="/delivery"> Delivery</a></li>
+                        <li><a href="/fleet-app">Fleet App</a></li>
+                        <li><a href="/product-ordering">Product Ordering </a></li>
+                        <li><a href="/ecommerce">Ecommerce</a></li>
+                        <li><a href="/back-office">Back Office</a></li>
+                    </ul>
+                </div>
+                <div class="column is-4">
+                    <h4 class="title is-light is-5">Contact Us</h4>
+                    <form class="needs-validation-contact-us" novalidate>
+                        <p class="input_wrapper"><input class="form-control" type="text" name="contact_nom" placeholder="Please Enter Name"  id ="contact_name" required><label for="contact_nom">Name</label></p>
+                        <p class="input_wrapper"><input class="form-control" type="email" name="contact_email" placeholder="Please Enter Email"  id ="contact_email" required><label for="contact_email">Email</label></p>
+                        <p class="textarea_wrapper"><textarea class="form-control text-white" name="contact_message" placeholder="Please Enter ..." id="contact_message"  required></textarea></p>
+                        <!-- <button type="submit" class="social-button" style="text-align: center;background:#830F50;padding-left: 0;">Submit</button> -->
+                        <button type="submit" id="submit-otp-value"
+                            class="button button-cta primary-btn btn-align-lg is-bold w-100 rounded raised no-lh form-otp-btn mt-2"> Submit<span class="action-load-btn spinner-border spinner-border-sm ml-2" role="status" aria-hidden="true" ></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="copyright "> -->
+            <div class="copyright-text mt-5">
+                <div class=" d-flex justify-content-center text-white">
+                    &copy;&nbsp; <span id="copyright"> 
+                        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                    </span>&nbsp; Vende, All Rights Reserved.
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </footer>
+
+    <!-- Back To Top Button -->
+    <div id="backtotop" style="margin:0 25px 50px 0"><a href=javascript:void(0)></a></div>
+    <!-- /Chat widget -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+    <script src="<%= config.assetUrl %>/js/app.js"></script>
+    <script src="<%= config.assetUrl %>/js/core.js"></script>
+    <script src="<%= config.assetUrl %>/js/custom.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+     var posApiUrl = "<%- config.api.posApiUrl %>";
+     var adminApiUrl = "<%- config.api.adminApiUrl %>";
+
+     (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation-contact-us');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (form.checkValidity() === true) {
+                    var settings = {
+                        url: adminApiUrl + "/api/distru/onboard/contact-us",
+                        method: "POST",
+                        timeout: 0,
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        data: JSON.stringify({
+                            email: $("#contact_email").val(),
+                            name: $("#contact_name").val(),
+                            message: $("#contact_message").val()
+                        }),
+                    };
+
+                    $.ajax(settings).done(function (response) {
+                        if (response.success == "1") {
+                            swal({
+                                title: "Message Sent!",
+                                text: "Your message has been sent to the support team successfully! Our support team will contact with you if required.",
+                                icon: "success",
+                                button: "Ok",
+                            });
+                        } else {
+                            swal(response.message, {
+                                title: "Oops !",
+                                icon: "error",
+                            });
+                        }
+                    });
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+        })();
+
+
+        $(".action-load-btn").hide();
+        $(document).on({
+            ajaxStart: function () {
+                $(".action-load-btn").show();
+            },
+            ajaxStop: function () {
+                $(".action-load-btn").hide();
+            },
+        });
+    </script>
+
+    <!-- Start of vendepos Zendesk Widget script -->
+    <script id="ze-snippet" defer src="https://static.zdassets.com/ekr/snippet.js?key=0f2003a9-3dae-4a39-912f-2363ae74b118"> </script>
+    <!-- End of vendepos Zendesk Widget script -->
+</body>
+</html>

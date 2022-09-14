@@ -1,0 +1,12 @@
+{
+  "cognito": {
+    "userPoolId": "us-east-2_OCQogH85U",
+    "ClientId": "7fjv52ivucvbdepqa751tcpt7r"
+  },
+  "api": {
+    "posApiUrl": "https://pos.vende.sale",
+    "adminApiUrl": "https://admin.rooteddelivery.com"
+  },
+  "siteUrl": "https://vende.sale",
+  "assetUrl": "https://vende.sale/assets"
+}

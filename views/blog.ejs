@@ -1,0 +1,240 @@
+<!-- Header Satart-->
+<%- include('layout/header') %>
+<!-- Header End-->
+        <!-- Hero caption -->
+        <div id="main-hero" class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class=" column is-6 is-offset-3 is-header-caption is-centered pt-60 pb-60 ">
+                        <h1 class="title main-title">Blog.</h1>
+                        <h2 class="subtitle is-5 light-text">Thoughts and ideas shared to web community</h2>
+                        <br />
+                        <!-- <div class="pricing-picker">
+                            <span  class="is-active">Get Started</span>
+                            <span >Log In</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Blog post list section -->
+<div class="section blog-section bg-white">
+    <div class="container">
+        <!--Blog Layout-->
+        <div class="columns">
+            <div class="column is-8">
+                <div id="blogs-list" class="columns is-multiline">
+                    
+                </div>
+
+                <div class="load-more has-text-centered">
+                    <button class="button button-cta" id="load-more-btn">Load More</button>
+                </div>
+            </div>
+
+            <div class="column is-4">
+                <div class="blog-sidebar">
+                    <!-- Search blog -->
+                    <div class="control has-icons-right blog-sidebar-search">
+                        <input class="input is-large" type="text" placeholder="Search posts..." />
+                        <span class="icon is-small is-right">
+                            <i class="sl sl-icon-magnifier"></i>
+                        </span>
+                    </div>
+
+                    <!--Recent Posts-->
+                    <div class="blog-sidebar-posts">
+                        <h4>Recent Posts</h4>
+
+                        <div class="blog-sidebar-posts-inner" id="recent-posts"></div>
+                    </div>
+
+                    <!--Categories-->
+                    <div class="blog-sidebar-categories">
+                        <h4>Categories</h4>
+
+                        <div class="blog-sidebar-categories-inner" id="categories-list"></div>
+                    </div>
+
+                    <!--Tags-->
+                    <div class="blog-sidebar-tags">
+                        <h4>Tags</h4>
+
+                        <div class="tags" id="tags-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Satart-->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+var skip = 0;
+var limit = 10;
+var loadMore = true;
+const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+$(document).ready(function() {
+
+    async function getPosts() {
+        try {
+            if(loadMore === false) {
+                return;
+            }
+
+            const response = await axios.post(`<%= config.api.adminApiUrl %>/api/distru/blog/list`, {
+                skip,
+                limit
+            });
+
+            let blogs = response.data.posts;
+
+            if(blogs.length === 0 || blogs.length < limit) {
+                loadMore = false;
+
+                if(skip > 0) {
+                    $(".load-more").html('All loaded!');
+                } else {
+                    $(".load-more").hide();
+                }                
+            }
+
+            let blogsHtml = '';
+
+            blogs.forEach(function(blog) {
+                blogsHtml += `<div class="column is-6">
+                    <!--Post Card-->
+                    <div class="card blog-grid-item is-masonry masonry-size-2">
+                        <div class="card-image">
+                            <img class="item-featured-image" src="${blog.thumb}" alt="${blog.title}" />
+                            <div class="post-date">
+                                <div class="post-date-inner">
+                                    <span>${ month[(new Date(blog.created_at)).getMonth()]}</span>
+                                    <span>${ String(new Date(blog.created_at).getDate()).padStart(2,'0') }</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="featured-post-title">
+                                <div class="title-avatar">
+                                    <img src="https://rooted-mint.s3.us-east-2.amazonaws.com/vende.png" alt="Vende" />
+                                </div>
+                                <div class="title-meta">
+                                    <h2 class="post-title">
+                                        ${blog.title}
+                                    </h2>
+                                    <h4 class="post-subtitle">
+                                        <span>by <a class="author-name" href="#">Vende</a></span>
+                                        <i class="fa fa-circle"></i>
+                                        <span>Posted in <a href="/blog/category/${ blog.category.slug.replaceAll(' ', '-') }">${ blog.category.name }</a></span>
+                                    </h4>
+                                </div>
+                            </div>
+                            <p>
+                                ${ blog.short_description.substr(0, 200) }
+                            </p>
+                            <a href="/blog/${ blog.slug }" class="read-more-link"> Read More <span>&#10230;</span> </a>
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            $("#blogs-list").append(blogsHtml);
+
+            skip += limit;            
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    async function getRecentPosts() {
+        try {
+             const response = await axios.get(`<%= config.api.adminApiUrl %>/api/distru/blog/posts/recent`);
+
+            let blogs = response.data.posts;
+
+            let blogsHtml = '';
+
+            blogs.forEach(function(blog) {
+                blogsHtml += `<a href="/blog/${ blog.slug }" class="blog-sidebar-post">
+                    <div class="post-image">
+                        <img src="${blog.thumb}" alt="${blog.title}" />
+                    </div>
+                    <div class="post-content">
+                        <h3>${blog.title}</h3>
+                        <div class="meta">
+                            <img src="https://rooted-mint.s3.us-east-2.amazonaws.com/vende.png" alt="Vende" />
+                            <span>Vende</span>
+                        </div>
+                    </div>
+                </a>`;
+            });
+
+            $("#recent-posts").html(blogsHtml);
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    async function getCategories() {
+        try {
+            const response = await axios.get(`<%= config.api.adminApiUrl %>/api/distru/blog/categories`);
+
+            let categories = response.data.categories;
+
+            let categoriesHtml = '';
+
+            categories.forEach(function(category) {
+                categoriesHtml += `<a href="/blog/category/${ category.slug.replaceAll(' ', '-') }" class="blog-sidebar-category">
+                    <span>${ category.name }</span>
+                    <div class="post-count">
+                        <span>${ category.blogs_count }</span>
+                    </div>
+                </a>`;
+            });
+
+            $("#categories-list").html(categoriesHtml);
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    async function getTags() {
+        try {
+             const response = await axios.get(`<%= config.api.adminApiUrl %>/api/distru/blog/tags`);
+
+            let tags = response.data.tags;
+
+            let tagsHtml = '';
+
+            tags.forEach(function(tag) {
+                tagsHtml += `<a href="/blog/tag/${ tag.name.replaceAll(' ', '-') }" class="tag is-medium">${ tag.name }</a>`;
+            });
+
+            $("#tags-list").html(tagsHtml);
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    $("#load-more-btn").on('click', function() {
+        getPosts();        
+    });
+
+    getPosts();
+    getRecentPosts();
+    getCategories();
+    getTags();
+});
+
+</script>
+
+<%- include('layout/footer') %>
+<!-- Footer End-->

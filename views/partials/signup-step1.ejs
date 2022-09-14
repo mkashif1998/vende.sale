@@ -1,0 +1,102 @@
+<div id="signup-step1-div" class="register_pg_1">
+  <div class="col-md-12 mb-3 text-center register_pg_1 mt-5">
+    <h2 class="font-weight-bold mb-3">Tell us a little bit about you</h2>
+    <p>We are not nosey - we just care about who we work with</p>
+  </div>
+  <form id="signup-form-step1" class="needs-validation-step1" novalidate>
+    <div class="col-md-12 register_pg_1 mt-5">
+      <div class="row">
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted"
+            >First Name</label
+          >
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            placeholder="Please Enter First Name"
+            required
+          />
+          <div class="invalid-feedback">Please enter valid email.</div>
+        </div>
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted"
+            >Last Name</label
+          >
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            placeholder="Please Enter Last Name"
+            required
+          />
+          <div class="invalid-feedback">Please enter last name.</div>
+        </div>
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted">Email</label>
+          <input
+            type="email"
+            required
+            id="emailAddress"
+            class="form-control"
+            placeholder="Please Enter Email"
+          />
+          <div class="invalid-feedback">Please enter valid email.</div>
+        </div>
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted"
+            >Phone Number (optional)</label
+          >
+          <input
+            type="text"
+            id="phoneNumber"
+            class="form-control"
+            placeholder="Please Enter Business Phone Number"
+          />
+        </div>
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Please Enter Password"
+            required
+            min="6"
+          />
+          <div class="invalid-feedback">Please enter valid password.</div>
+        </div>
+        <div class="col-md-6 mb-5">
+          <label class="form-label font-weight-bold text-muted"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            id="confirmPasssword"
+            class="form-control"
+            required
+            min="6"
+            placeholder="Please Enter Confirm Password"
+          />
+          <div class="invalid-feedback">Please re-enter same password.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-5">
+      <div
+        id="signup-error"
+        class="alert alert-danger"
+        style="display: none"
+      ></div>
+    </div>
+    <div class="col-md-12 mt-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="/login" id="signin" class="text-secondary">Sign In</a>
+        <button type="submit" class="progressbtn" id="next">Next
+          <span class="action-load-btn spinner-border spinner-border-sm ml-2" role="status" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "rootedcompliance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "boxicons": "^2.0.9",
+    "busboy": "^0.3.1",
+    "busboy-body-parser": "^0.3.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.6",
+    "open": "^7.3.0",
+    "url": "^0.11.0",
+    "uuid": "^8.3.1",
+    "xml-js": "^1.6.11"
+  }
+}

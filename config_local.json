@@ -1,0 +1,12 @@
+{
+  "cognito": {
+    "userPoolId": "us-east-2_OCQogH85U",
+    "ClientId": "7fjv52ivucvbdepqa751tcpt7r"
+  },
+  "api": {
+    "posApiUrl": "http://rooted-pos.local",
+    "adminApiUrl": "http://rooted-admin.local"
+  },
+  "siteUrl": "http://localhost:5000",
+  "assetUrl": "http://localhost:5000/assets"
+}

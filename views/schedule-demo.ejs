@@ -1,0 +1,243 @@
+<!-- Header Satart-->
+<%- include('layout/auth_header') %>
+<!-- Header End-->
+<!-- Wrapper -->
+<div class="login-wrapper columns is-gapless bg-white">
+  <!-- Form section -->
+  <div class="col-md-7">
+    <div class="hero is-fullheight">
+      <div class="hero-heading">
+        <div class="d-flex justify-content-center" bo>
+          <a href="/"
+            ><img
+              class="top-logo switcher-logo"
+              src="assets/img/logos/logo.png"
+              alt=""
+          /></a>
+        </div>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <div class="col-md-12 mb-3 text-center register_pg_1">
+            <h2 class="font-weight-bold mb-3">Schedule Meeting</h2>
+            <p>We are here to help.</p>
+          </div>
+          <form class="needs-validation-schedule-form" novalidate>
+            <div class="col-md-12 register_pg_1 mt-5">
+              <div class="row">
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Please Enter Name"
+                    name="name"
+                    id="name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >Pone Number
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Please Enter Pone Number"
+                    name="phone"
+                    id="phone"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >Email
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Please Enter Email"
+                    name="email"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >Business Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Please Enter Business Name"
+                    name="business_name"
+                    id="business_name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >State Operation</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Please Enter State Operation"
+                    name="state_operation"
+                    id="state_operation"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5">
+                  <label class="form-label font-weight-bold text-muted"
+                    >Desired Date & Time</label
+                  >
+                  <input
+                    type="datetime-local"
+                    class="form-control"
+                    placeholder="Please Enter Schedule Date"
+                    name="schedule_date"
+                    id="schedule_date"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-5 mt-5">
+                  <div class="d-flex justify-content-end">
+                    <button type="submit" class="progressbtn" id="submit">
+                      Submit
+                      <span
+                        class="action-load-btn spinner-border spinner-border-sm ml-2"
+                        role="status"
+                        aria-hidden="true"
+                      ></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image section (hidden on mobile) -->
+  <div
+    class="col-md-5 login-column is-hidden-mobile hero-banner px-0 d-flex align-items-stretch"
+  >
+    <div class="hero login-hero is-fullheight is-theme-primary is-relative">
+      <div class="text-center">
+        <p class="text-white font-size-28">
+          39% of consumers say that they would not reorder from a company that
+          had a bad delivery experience with.
+        </p>
+      </div>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /Image section -->
+</div>
+<!-- /Wrapper -->
+<!-- Back To Top Button -->
+<script>
+  // Disable form submissions if there are invalid fields
+  (function () {
+    "use strict";
+    window.addEventListener(
+      "load",
+      function () {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName(
+          "needs-validation-schedule-form"
+        );
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              event.preventDefault();
+              event.stopPropagation();
+
+              if (form.checkValidity() === true) {
+                var settings = {
+                  url: adminApiUrl + "/api/distru/onboard/schedule-demo",
+                  method: "POST",
+                  timeout: 0,
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  data: JSON.stringify({
+                    name: $("#name").val(),
+                    phone: $("#phone").val(),
+                    email: $("#email").val(),
+                    business_name: $("#business_name").val(),
+                    state_operation: $("#state_operation").val(),
+                    schedule_date: $("#schedule_date").val(),
+                  }),
+                };
+
+                $.ajax(settings).done(function (response) {
+                  if (response.success == "1") {
+                    swal({
+                      title: "Schedule Demo Request Sent!",
+                      text: "Your schedule demo request has been submitted successfully! We will review and contact with you soon!",
+                      icon: "success",
+                      button: "Ok",
+                    });
+                  } else {
+                    swal(response.message, {
+                      title: "Oops !",
+                      icon: "error",
+                    });
+                  }
+                });
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      },
+      false
+    );
+  })();
+
+  $(".action-load-btn").hide();
+  $(document).on({
+    ajaxStart: function () {
+      $(".action-load-btn").show();
+    },
+    ajaxStop: function () {
+      $(".action-load-btn").hide();
+    },
+  });
+
+  function removeclassfunct(y) {
+    if (y.matches) {
+      // If media query matches
+      $(".is-hidden-mobile").removeClass("d-flex");
+      $(".is-hidden-mobile").removeClass("align-items-stretch");
+    } else {
+      $(".is-hidden-mobile").addClass("d-flex");
+      $(".is-hidden-mobile").addClass("align-items-stretch");
+    }
+  }
+
+  var y = window.matchMedia("(max-width: 770px)");
+  removeclassfunct(y); // Call listener function at run time
+  y.addListener(removeclassfunct);
+</script>
+<%- include('layout/auth_footer') %>

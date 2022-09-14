@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+  <url>
+    <loc><%= config.siteUrl %>/</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/point-of-sale</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/fleet-app</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/delivery</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/product-ordering</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/ecommerce</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/back-office</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/pricing</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/login</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/signup</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/blog</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/live-demo</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/self-demo</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc><%= config.siteUrl %>/schedule-demo</loc>
+    <lastmod>2022-06-14T13:45:49+00:00</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <% links.forEach(function(link) { %>
+  <url>
+    <loc><%= config.siteUrl %>/blog/<%= link.slug %></loc>
+    <lastmod><%= link.updated_at.replaceAll('.000000Z', '+00:00') %></lastmod>
+    <priority>0.60</priority>
+  </url>
+  <% }) %>
+</urlset>

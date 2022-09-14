@@ -1,0 +1,822 @@
+<!-- Header Satart-->
+<%- include('layout/header') %>
+<!-- Header End-->
+        <!-- Hero caption -->
+        <div id="main-hero" class="hero-body">
+            <div class="container">
+                <div class="row">
+                    <!-- Caption -->
+                    <div class="col-md-6">
+                        <h1 class="title main-title landing-title" id="str"> </h1>
+                        <h2 class="subtitle is-5 light-text mt-2">
+                           Simple and easy to use. Get started in just a few minutes.
+                        </h2>
+                        <form action="/signup">
+                            <div class="d-flex justify-content-between">
+                                <input name="email" type="email" class="form-control" placeholder="Please Enter Email" required>
+                                <button type="submit"
+                                    class="button button-cta btn-align btn-outlined is-bold light-btn z-index-2"
+                                    id="get_started_btn">
+                                    Get Started
+                                </button>
+                            </div>
+                        </form>
+                        <div class="mt-5">
+                            <img src="../assets/img/smallicon/rating.png" width="50px" height="50px" alt="" />
+                            <p style="font-size: 12px;" class=" mb-3">"Vende is soo easy to use. And I</p>
+                            <p style="font-size: 12px;">order straight from where I manage my product"</p>
+                            <div class="get-app-lg-veiew">
+                                <div class="d-flex justify-content-start mt-5">
+                                    <a href="https://apps.apple.com/us/developer/compliance-and-logistics-specialists-llc/id1530461340" target="_blank" class="d-flex justify-content-start align-items-center app-download-btn" >
+                                    
+                                        <img src="assets/img/smallicon/apple.png" width="30px" height="30px" alt="" />
+                                    
+                                    <span class="ml-1"><h5>App Store</h5></span>
+                                </a>
+                                <a href="https://play.google.com/store/apps/developer?id=Compliance+and+Logistics+Specialists&hl=en_US&gl=US"  target="_blank" class="d-flex justify-content-start align-items-center app-download-btn ml-3" >
+                                    <img src="assets/img/smallicon/google-play.png"   width="30px" height="30px" alt="" />
+                                    <span class="ml-1"><h5>Play Store</h5></span>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="get-app-sm-veiew">
+                                <div class="d-flex justify-content-center mt-5">
+                                    <div class="d-flex justify-content-start align-items-center app-download-btn">
+                                        <a href="https://www.apple.com/app-store/">
+                                            <img src="../assets/img/smallicon/apple.png" width="30px" height="30px"
+                                                alt="" />
+                                        </a>
+                                        <span class="ml-1">
+                                            <h5>App Store</h5>
+                                        </span>
+                                    </div>
+                                    <div class="d-flex justify-content-start align-items-center app-download-btn ml-3">
+                                        <a href="https://www.applee.com/app-store/">
+                                            <img src="../assets/img/smallicon/google-play.png" width="30px" height="30px"
+                                                alt="" />
+                                        </a>
+                                        <span class="ml-1">
+                                            <h5>Play Store</h5>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- UI Mockup -->
+                    <div class="col-md-6 pt-6" >
+                        <div data-aos="zoom-in-left">
+                            <img class=" side-image" id="tab_imges3"
+                                src="../assets/img/detailsimg/TEASER.png" data-extension=".png" alt="" />
+                        </div>
+                        <!-- <video loop autoplay muted  id="myvid" >
+                            <source src="../assets/img/video/Vende loop.mov" type="video/mp4">
+                            <source src="../assets/img/video/Vende loop.mov" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video> -->
+                        <!-- <div id="sam-container">
+                            <div class="mobile-frame ">
+                                <img src="../assets/img/tab.png">
+                                <div class="sam-frame-box">
+                                    <iframe src="https://www.youtube.com/embed/xT76z96kvxU?autoplay=1&loop=1&playlist=xT76z96kvxU" controls=0 allow='autoplay' frameborder="0" style="overflow:hidden" width="320px"
+                                        height="200px"></iframe>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div id="med-container">
+                            <div class="tablet-frame ">
+                                <img src="../assets/img/tab.png">
+                                <div class="med-frame-box">
+                                    <iframe src="https://www.youtube.com/embed/xT76z96kvxU?autoplay=1&loop=1&playlist=xT76z96kvxU" controls=0 allow='autoplay' frameborder="0" style="overflow:hidden" width="350px"
+                                        height="250px"></iframe>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div id="lrg-container">
+                            <div class="laptop-frame ">
+                                <img src="../assets/img/tab.png">
+                                <div class="lrg-frame-box">
+                                    <iframe src="https://www.youtube.com/embed/xT76z96kvxU?autoplay=1&loop=1&playlist=xT76z96kvxU" controls=0 allow='autoplay' frameborder="0" style="overflow:hidden" width="485px"
+                                        height="300px"></iframe>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="rwd-media" >
+                            <iframe src="https://player.vimeo.com/video/60814695?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="448" height="252" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                        </div> -->
+                          <!-- <div id="lrg-container">
+                            <div class="laptop-frame ">
+                                <img src="../assets/img/tab.png">
+                                <div class="lrg-frame-box">
+                                    <iframe src="https://www.youtube.com/embed/xT76z96kvxU?autoplay=1&loop=1&playlist=xT76z96kvxU" controls=0 allow='autoplay' frameborder="0" style="overflow:hidden" width="485px" height="300px"></iframe>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients -->
+    <div class="hero-foot" style="margin-top: 50px;">
+        <div class="container-fluid">
+            <div class="slider ">
+                <div class="slide-track ">
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/1.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/2.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/3.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/4.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/5.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/6.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/7.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/8.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/9.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/10.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/11.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/12.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/13.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/14.png" alt="" />
+                    </div>
+                    <div class="slide d-flex justify-content-center">
+                        <img src="../assets/img/brandslider/15.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/feature-list') %>
+
+    <!--Feature Section 1-->
+    <div id="features" class="section has-circles is-medium ">
+        <div class="container">
+            <!--Wrapper-->
+
+            <div class="content-wrapper has-margin-bottom">
+                <div class="columns is-vcentered">
+                    <!--Laptop-->
+                    <div class="column is-6 ">
+                        <div data-aos="zoom-in-right">
+                            <img class=" side-image" 
+                                src="../assets/img/detailsimg/POS PRODUCT FEATURES.png" data-extension=".png" alt="" />
+                        </div>
+                    </div>
+                    <!--Content-->
+                    <div class="column is-6 is-offset-1">
+                        <div class="side-title">
+                            <h2 class="title">Product is Everything.</h2>
+                            <div class="title-number is-single-reveal"></div>
+                        </div>
+                        <p>As a cannabis retailer, the most important part of your
+                            business is the product.
+                            Your new point of sale system focuses on the entire lifecycle of the product and creates
+                            features that simplify the complex cannabis environment.
+                            Manage everything from product ordering and reordering, to industry-wide product analytics
+                        </p>
+                        <div>
+                            <ul class="my_nav_tab mt-5">
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_1">Order Product</a>
+                                    <p class="tab_list_view tab_detail_1 prag_font">Place wholesale orders directly from
+                                        your
+                                        point of sale system. </p>
+                                    <div class="container_line line_1"><a href=javascript:void(0)
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_2"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_2">Receive Product Suggestions </a>
+                                    <p class="tab_list_view tab_detail_2 prag_font">With Rooted Distro integration, get
+                                        regional
+                                        product support and suggestions as to what products are performing the best.
+                                    </p>
+                                    <div class="container_line line_3"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_4"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_3">Receive Low Inventory Product
+                                        Alerts</a>
+                                    <p class="tab_list_view tab_detail_3 prag_font">Preset reorder quantities in product
+                                        profiles
+                                        allow you to spend less time looking at inventory and more time with your
+                                        customers.
+                                    </p>
+                                    <div class="container_line line_5"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_6"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_4">Fastest Distribution Delivery
+                                        Times</a>
+                                    <p class="tab_list_view tab_detail_4 prag_font">See delivery time estimates. Track
+                                        all orders
+                                        via Purchase Order section and
+                                        receive updates of your order status.</p>
+                                    <div class="container_line line_7"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_8"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Feature Section 2-->
+    <div id="features" class="section has-circles is-medium bg-white">
+        <div class="container ">
+            <!--Wrapper-->
+            <div class="content-wrapper has-margin-bottom">
+                <div class="columns is-vcentered">
+                    <!--Content-->
+                    <div class="column is-6  ">
+                        <div class="side-title">
+                            <h2 class="title">Dispatcher Mode.</h2>
+                            <div class="title-number is-single-reveal"></div>
+                        </div>
+                        <p>In combination with an award-winning fleet app, your point of
+                            sale system allows dispatchers
+                            and budtenders to control the entire delivery process in the most efficient ways</p>
+                        <div>
+                            <ul class="my_nav_tab mt-5">
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_1">Smart Driver Selecting</a>
+                                    <p class="tab_list_view tab_detail_1 prag_font">Consisting of 3 key points: Products
+                                        Carried,
+                                        Distance, and Orders in the Queue,
+                                        selecting the optimal driver is as simple as clicking a button. </p>
+                                    <div class="container_line line_1"><a href=javascript:void(0)
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_2"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_2">Manage entire POS from Map Page</a>
+                                    <p class="tab_list_view tab_detail_2 prag_font">Manage all order taking and
+                                        dispatching
+                                        directly from the map page.
+                                        Add new customers, create orders, track vehicles, and manage ETA’s all from one
+                                        page.
+                                    </p>
+                                    <div class="container_line line_3"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_4"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_3">Bird's eye view of the entire
+                                        operation</a>
+                                    <p class="tab_list_view tab_detail_3 prag_font">eye view of the entire operation
+                                        Being able to see where your drivers are, and where the deliveries need to take
+                                        place; you are able to make quick decisions whenever needed.
+                                    </p>
+                                    <div class="container_line line_5"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_6"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_4">Supports both delivery
+                                        models</a>
+                                    <p class="tab_list_view tab_detail_4 prag_font">Manage your business model with
+                                        ease. Whether
+                                        your drivers
+                                        have products with them and perform deliveries as they come in, or if they are
+                                        stationary at the facility
+                                        until the order comes in - we are here to support you. </p>
+                                    <div class="container_line line_7"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_8"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <div data-aos="zoom-in-left" data-aos-duration="1000" data-aos-offset="-200">
+                            <img class=" side-image"  src="../assets/img/detailsimg/DISPATCHER MODE.png"
+                                data-extension=".png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Feature Section 3-->
+    <div id="features" class="section has-circles is-medium">
+
+        <div class="container">
+            <!--Wrapper-->
+            <div class="content-wrapper has-margin-bottom">
+                <div class="columns is-vcentered">
+                    <!--Mockup-->
+                    <div class="column is-6">
+                        <div data-aos="zoom-in-right" data-aos-duration="1000" data-aos-offset="-800">
+                            <img class=" side-image" 
+                                src="../assets/img/detailsimg/POS COMPLIANCE FEATURE.png" data-extension=".png" alt="" />
+                        </div>
+                    </div>
+                    <!--Content-->
+                    <div class="column is-6 is-offset-1 ">
+                        <div class="side-title">
+                            <h1 class="title">Compliance.</h1>
+                            <div class="title-number is-single-reveal"></div>
+                        </div>
+                        <div>
+                            <ul class="my_nav_tab mt-5">
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_1">METRC Integration </a>
+                                    <p class="tab_list_view tab_detail_1 prag_font">A safe and secure system that
+                                        reports
+                                        directly with the States track and trace system. </p>
+                                    <div class="container_line line_1"><a href=javascript:void(0)
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_2"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_2">ID Verification </a>
+                                    <p class="tab_list_view tab_detail_2 prag_font">Automatically check-in and create
+                                        customers
+                                        directly from scanning their ID.
+                                    </p>
+                                    <div class="container_line line_3"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_4"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_3">Transaction Limits</a>
+                                    <p class="tab_list_view tab_detail_3 prag_font">Never oversell to a customer again.
+                                        Receive
+                                        notifications when getting close to
+                                        selling more than the legal limit to a customer.
+                                    </p>
+                                    <div class="container_line line_5">
+                                        <a href="javascript:void(0)" class="sweep-to-right"></a>
+                                    </div>
+                                    <div class="container_line2 mb-3 line_6"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_4">Reporting </a>
+                                    <p class="tab_list_view tab_detail_4 prag_font">In-app reporting to help retailers
+                                        keep track
+                                        of their State and City tax liabilities. </p>
+                                    <div class="container_line line_7"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_8"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_5">Automatic Bag Limit Restrictions</a>
+                                    <p class="tab_list_view tab_detail_5 prag_font">
+                                        For ice cream truck delivery models, never transfer more product than what the
+                                        State allows.
+                                    </p>
+                                    <div class="container_line line_9"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_10"></div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="tab_btn_6">Inventory Ledgers and Customer
+                                        Signatures</a>
+                                    <p class="tab_list_view tab_detail_6 prag_font">Manage inventory ledgers directly
+                                        from the
+                                        fleet app. Collect customer
+                                        signatures to ensure a compliant delivery. </p>
+                                    <div class="container_line line_11"><a href="javascript:void(0)"
+                                            class="sweep-to-right"></a></div>
+                                    <div class="container_line2 mb-3 line_12"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--eCommerce Section -->
+    <div id="main-features1" class="section is-medium">
+        <div class="container">
+
+            <div class="content-wrapper">
+                <div class="columns is-vcentered">
+
+                    <!-- Content -->
+                    <div class="column is-4 ">
+                        <div class="service-box">
+                            <h1 class="service-title text-white">eCommerce.</h1>
+                            <div class="title-divider"></div>
+                            <p class="text-white prag_font">
+                                One of the most important aspects of any cannabis retailer is its menu. The products you
+                                carry and how you present them to your customers are everything.
+                            </p>
+                            <p class="text-white prag_font">
+                                Give your customers another way to order from you. If you already have a website, simply
+                                imbed your eCommerce for quick checkout anytime.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Icons -->
+                    <div class="column is-7 is-offset-1" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1000" data-aos-offset="-1000">
+                        <div>
+                            <img class=" side-image" src="../assets/img/detailsimg/ECOMMERCE.png" data-extension=".png"
+                                alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section is-medium is-grey has-triangle-right">
+
+        <!-- Learn more on features -->
+        <div class="section is-medium is-relative">
+            <div class="container has-text-centered bg-white" style="background-color: #fff;">
+                <div class="columns is-vcentered d-flex align-items-start mt-3 flex-wrap">
+                    <div class="column is-6">
+                        <div class="section-title-wrapper">
+                            <h1 class=" d-flex  justify-content-start text-dark">Key benefits of</h1>
+                            <h1 class=" d-flex justify-content-start text-dark">the Vende platform
+                            </h1>
+                            <p class="pt-20 d-flex justify-content-start">
+                                <a href="/signup"
+                                    class="button button-cta btn-align btn-outlined is-bold light-btn  z-index-2"
+                                    id="get_started_btn">
+                                    Get Started
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column is-6 mt-3">
+                        <div class="columns is-vcentered d-flex align-items-start flex-wrap">
+
+                            <div class="column is-6 ">
+                                <!-- Side icon box -->
+                                <div class="d-flex justify-content-start  ml-20">
+                                    <!-- <i class="im im-icon-Microphone-4 is-size-2 color-primary"></i> -->
+                                    <img class="keypoint mb-2" src="../assets/img/keybenifits/order-delivery.png" />
+                                </div>
+                                <div class="content content-flex">
+                                    <div class="dark-text has-text-left ml-20">
+                                        <h1 class="text-bold">Easy Ordering</h1>
+                                        <p class="mt-3" style="font-size: 18px;">
+                                            Place, track, and manage all your orders from your point of sale system.
+                                            Get suggested products based on your location and customer data.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6 ">
+                                <!-- Side icon box -->
+                                <div class="d-flex justify-content-start ml-20">
+                                    <!-- <i class="im im-icon-Microphone-4 is-size-2 color-primary"></i> -->
+                                    <img class="keypoint mb-2" src="../assets/img/keybenifits/barcode-scanner.png" />
+                                </div>
+                                <div class="content content-flex">
+                                    <div class="dark-text has-text-left ml-20 ">
+                                        <h1 class="text-bold">Scanning</h1>
+                                        <p class="mt-3" style="font-size: 18px;">
+                                            Spend less time completing forms and more time with your customers.
+                                            Quickly scan ID’s for Intake and scan products for checkout.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns is-vcenteredd-flex align-items-start mt-3 flex-wrap">
+                            <div class="column is-6">
+                                <!-- Side icon box -->
+                                <div class="d-flex justify-content-start mb-3 ml-20">
+                                    <img class="keypoint mb-2" src="../assets/img/keybenifits/puzzle.png" />
+                                </div>
+                                <div class="content content-flex">
+                                    <div class="dark-text has-text-left ml-20">
+                                        <h1 class="text-bold">Compatibility</h1>
+                                        <p class="mt-3" style="font-size: 18px;">
+                                            The Vende platform can be used on any device. Windows, MAC, Android, iPad,
+                                            and IOS are all compatible with your Point of Sale system.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <!-- Side icon box -->
+                                <div class="d-flex justify-content-start mb-3 ml-20">
+                                    <!-- <i class="im im-icon-Microphone-4 is-size-2 color-primary"></i> -->
+                                    <img class="keypoint mb-2" src="../assets/img/keybenifits/bubble.png" />
+                                </div>
+                                <div class="content content-flex">
+                                    <div class="dark-text has-text-left ml-20">
+                                        <h1 class="text-bold">Streamline Communication</h1>
+                                        <p class="mt-3" style="font-size: 18px;">
+                                            Keep conversations with teammates, clients, and vendors in one place.
+                                            Ensuring everyone is on the same page.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Pricing Section-->
+        <div class="section is-pricing is-medium  " style="background-color: #FBFBFB;">
+            <div class="container">
+                <!--Title-->
+                <div id="pricing" class="section-title has-text-centered">
+                    <h2 class="title is-spaced">Straightforward Plans</h2>
+                    <h3 class="subtitle-alt">With tons of available features.</h3>
+                </div>
+
+                <!--Wrapper-->
+                <div class="pricing-wrap">
+                    <div class="columns ">
+                        <!--Pricing card-->
+                        <div class="column is-4">
+                            <div class="pricing-card">
+                                <div class="pricing-overlay is-accent"></div>
+                                <a href="/signup" class="button pricing-button cta-button is-rounded">Get Started</a>
+                                <div class="pricing-head">
+                                    <div class="price">250</div>
+                                    <div class="meta">
+                                        <span>Vende</span>
+                                        <span>1 location</span>
+                                    </div>
+                                </div>
+                                <div class="pricing-desc">
+                                    <p>
+                                        Get all the features shown to properly manage cannabis retail business.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Pricing card-->
+                        <div class="column is-4">
+                            <div class="pricing-card">
+                                <div class="pricing-overlay"></div>
+                                <a href="/signup" class="button pricing-button cta-button is-rounded">Get Started</a>
+                                <div class="pricing-head">
+                                    <div class="price">500</div>
+                                    <div class="meta mt-5">
+                                        <span class="">Growing</span>
+                                        <span>per additional location</span>
+                                    </div>
+                                </div>
+                                <div class="pricing-desc">
+                                    <p>
+                                        For each location added after the first location (License)
+                                        Get all the features shown to properly manage your cannabis retail business.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Pricing card-->
+                        <div class="column is-4">
+                            <div class="pricing-card">
+                                <div class="pricing-overlay is-bold"></div>
+                                <a href="#contact-us" class="button pricing-button cta-button is-rounded" >Contact Us</a>
+                                <div class="pricing-head">
+                                    <div class="price">Custom</div>
+                                    <div class="meta">
+                                        <!-- <span>Business</span>
+                                        <span>Billed monthly</span> -->
+                                    </div>
+                                </div>
+                                <div class="pricing-desc">
+                                    <p>
+                                        Please contact our sales associates for customer plans such as importing
+                                        customer ecommerce app, etc.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learn more on features -->
+        <div class="section is-medium is-relative section-feature-grey">
+            <div class="container has-text-centered multiple_sahpe">
+                <div class="columns is-vcentered mb-6">
+                    <div class="column is-6 is-offset-3 has-text-centered">
+                        <div class="section-title-wrapper">
+                            <h6 class="top-subtitle">That's not all</h6>
+                            <h2 class="title dark-text text-bold main-title is-2">
+                                Discover more Features!
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-vcentered ">
+                    <div class="column is-4">
+                        <!-- Side icon box -->
+                        <div class="content content-flex">
+                            <div class="">
+                                <img class="featureimg " src="../assets/img/featuresimg/seo.png" />
+                            </div>
+                            <div class="dark-text has-text-left ml-30">
+                                <h2 class="text-bold">Marketing</h2>
+                                <p class="prag_font">
+                                    Always keep in touch with your customers with built in SMS and email marketing.
+                                    Set triggers and automations for optimal communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <!-- Side icon box -->
+                        <div class="content content-flex">
+                            <div class="">
+                                <!-- <i class="im im-icon-Microphone-4 is-size-2 color-primary"></i> -->
+                                <img class="featureimg " src="../assets/img/featuresimg/management.png" />
+                            </div>
+                            <div class="dark-text has-text-left ml-30">
+                                <h2 class="text-bold">Task Management</h2>
+                                <p class="prag_font">
+                                    Receive and send tasks to ensure things are getting done.
+                                    Comment back and forth and set reminder to help increase efficiency.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <!-- Side icon box -->
+                        <div class="content content-flex">
+                            <div class="">
+                                <img class="featureimg " src="../assets/img/featuresimg/paper.png" />
+                            </div>
+                            <div class="dark-text has-text-left ml-30">
+                                <h2 class="text-bold">Reporting</h2>
+                                <p class="prag_font">
+                                    Always be in the loop with what is going on with your business Manage and generate
+                                    customer reports.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="pt-20 pb-40">
+                    <a href="/signup" class="button button-cta btn-align btn-outlined is-bold light-btn  z-index-2"
+                        id="get_started_btn">
+                        Get Started
+                    </a>
+                </p>
+            </div>
+        </div>
+        <!-- End Section -->
+        <div class="section is-medium is-grey ">
+            <div class="container multiple_sahpe">
+                <div class="content-wrapper ">
+
+                    <!--Testimonials-->
+                    <section id="testim" class="testim ">
+                        <div class="wrap">
+
+                            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                            <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                            <ul id="testim-dots" class="dots">
+                                <li class="dot active"></li>
+                                <li class="dot"></li>
+                                <li class="dot"></li>
+                                <li class="dot"></li>
+                                <li class="dot"></li>
+                            </ul>
+                            <div id="testim-content" class="cont">
+
+                                <div class="active">
+                                    <div class="slider-img"><img src="../assets/img/brandslider/rooted.png" alt="pics"></div>
+                                    <!-- <h2>Rooted Group</h2> -->
+                                    <p>Working with Vende has been a lot of fun.
+                                        Their vision of how product should be handled and fulfilled is truly going to
+                                        change the way the industry works.</p>
+                                </div>
+
+                                <div>
+                                    <div class="img"><img src="../assets/img/brandslider/budex.png" alt="pics"></div>
+                                    <!-- <h2>Budex Delivery</h2> -->
+                                    <p>While Cannabis is a difficult industry as it is, Vende makes the software as
+                                        simple
+                                        and easy to use as possible. If you do have a question or a problem,
+                                        there is someone to help you within 5 minutes. They are always friendly and
+                                        knowledgeable.</p>
+                                </div>
+
+                                <div>
+                                    <div class="img"><img src="../assets/img/brandslider/cake.png" alt="pics"></div>
+                                    <!-- <h2>Cake California</h2> -->
+                                    <p>It is user-friendly and makes the intense aspect of running a cannabis business
+                                        much easier.
+                                        They make scalability of your product line, inventory, and business a simple.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="img"><img src="../assets/img/brandslider/orange.png" alt="pics"></div>
+                                    <!-- <h2>Orange Leaf</h2> -->
+                                    <p>I really like how the system is integrated with Metrc. The Weedmaps and other
+                                        integrations are also nice but I think the best part is they offer a free
+                                        e-commerce platform for online ordering. This has been extremely helpful during
+                                        Covid
+                                        as we've seen a big increase in online orders for curbside pickup and delivery.
+
+                                        I think their delivery software is some of the best out there. We got rid
+                                        of our Onfleet account when we realized it had everything we needed for delivery
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <div class="img"><img src="../assets/img/brandslider/rooted.png" alt="pics"></div>
+                                    <!-- <h2>Rooted Group</h2> -->
+                                    <p>Working with Vende has been a lot of fun.
+                                        Their vision of how product should be handled and fulfilled is truly going to
+                                        change the way the industry works.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-us" class="contact-us-modal">
+        <div class="dialog">
+          <a href="#close-chat-box" title="Close-chat-box" class="close-chat-box">X</a>
+          <div class="row">
+                <div class="col-md-12 mt-5 mb-4">
+                    <h3>Contact Us</h3>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label font-weight-bold text-muted mb-0">First Name</label>
+                    <input type="text" class="form-control" placeholder="Please Enter First Name">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label font-weight-bold text-muted mb-0">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Please Enter Last Name">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label font-weight-bold text-muted mb-0">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="Please Enter Phone Number">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label font-weight-bold text-muted mb-0">Email</label>
+                    <input type="text" class="form-control" placeholder="Please Enter Email">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label class="form-label font-weight-bold text-muted mb-0">Message</label>
+                    <textarea type="text" class="form-control" row="4" placeholder="Please Enter Message"></textarea>
+                </div>
+                <div class="col-md-12 mb-3">
+                   <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary">Submit</button>
+                   </div>
+                </div>
+          </div>
+        </div>
+    </div>
+<!-- Footer Satart-->
+<%- include('layout/footer') %>
+<!-- Footer End-->
+
+<script>
+    // document.getElementById('myvid').play();
+</script>

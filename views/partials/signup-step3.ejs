@@ -1,0 +1,228 @@
+<div id="signup-step1-div" class="register_pg_3">
+  <div class="col-md-12 mb-3 text-center register_pg_3 mt-5">
+    <h2 class="font-weight-bold mb-3">
+      Please share with us your business details
+    </h2>
+    <p>
+      To complete setup, you must already have a cannabis license and a METRC
+      key.
+    </p>
+  </div>
+
+  <form id="signup-form-step2" class="needs-validation-step2" novalidate>
+    <div class="col-md-12 register_pg_3">
+      <div class="row mt-5 row justify-content-md-center">
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted"
+            >Legal Business Name</label
+          >
+          <input
+            id="legal-buisness-name"
+            type="text"
+            class="form-control"
+            required
+            placeholder="Please Enter Legal Business Name"
+          />
+          <div class="invalid-feedback">Please enter legal business name.</div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted">DBA Name</label>
+          <input
+            id="dba-name"
+            type="text"
+            class="form-control"
+            placeholder="Please Enter DBA name"
+            required
+          />
+          <div class="invalid-feedback">Please enter DBA name.</div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted"
+            >Ecommerce Alias
+          </label>
+          <input
+            id="ecommerce_alias"
+            type="text"
+            class="form-control"
+            placeholder="Please Enter the alias you would like for your e-commerce"
+            required
+          />
+          <div class="invalid-feedback">Please enter e-commerce alias.</div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted"
+            >Licensed Address</label
+          >
+          <input
+            id="address"
+            type="text"
+            class="form-control"
+            placeholder="Please Enter Licensed Address"
+            required
+          />
+          <div class="invalid-feedback">Please enter licensed address.</div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted"
+            >License Number</label
+          >
+          <input
+            id="license-number"
+            type="text"
+            class="form-control"
+            placeholder="Please Enter License Number"
+            required
+          />
+          <div class="invalid-feedback">Please enter license number.</div>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-3">
+          <label class="form-label font-weight-bold text-muted"
+            >METRC Key</label
+          >
+          <a id="" href="#modal">
+            <!-- <i data-feather="help-circle"></i > -->
+            <svg
+              id="information_metric_key"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </a>
+          <input
+            id="matrc-key"
+            type="text"
+            class="form-control"
+            placeholder="Please Enter METRIC Key"
+            required
+          />
+          <div class="invalid-feedback">Please enter METRIC key.</div>
+        </div>
+        <div id="modal">
+          <div class="modal-content">
+            <p><b>METRC Key:</b></p>
+            <ol
+              style="
+                list-style-type: true;
+                padding: 20px;
+                font-size: 16px;
+                line-height: 2;
+              "
+            >
+              <li>
+                With a company admin account, login to
+                <a href="https://ca.metrc.com/log-in" target="_blank"> METRC</a>
+              </li>
+              <li>Click dropdown next to name</li>
+              <li>Select API Keys</li>
+              <li>Copy the API Key and Past it in the text field</li>
+            </ol>
+            <a href="#" title="Close Modal" class="close">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-5">
+      <div
+        id="signup-error2"
+        class="alert alert-danger"
+        style="display: none"
+      ></div>
+    </div>
+    <div class="col-md-12 mt-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="javascript:void(0);" class="text-secondary" id="prev"
+          >Previous</a
+        >
+        <button type="submit" class="progressbtn" id="submit-step3">
+          Submit
+          <span
+            class="action-load-btn spinner-border spinner-border-sm ml-2"
+            role="status"
+            aria-hidden="true"
+          ></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="contact-us" class="contact-us-modal">
+  <div class="dialog">
+    <a href="#close-chat-box" title="Close-chat-box" class="close-chat-box"
+      >X</a
+    >
+    <div class="row">
+      <div class="col-md-12 mt-5 mb-4">
+        <h3>Contact Us</h3>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label font-weight-bold text-muted mb-0"
+          >First Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Please Enter First Name"
+        />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label font-weight-bold text-muted mb-0"
+          >Last Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Please Enter Last Name"
+        />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label font-weight-bold text-muted mb-0"
+          >Phone Number</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Please Enter Phone Number"
+        />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label font-weight-bold text-muted mb-0">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Please Enter Email"
+        />
+      </div>
+      <div class="col-md-12 mb-3">
+        <label class="form-label font-weight-bold text-muted mb-0"
+          >Message</label
+        >
+        <textarea
+          type="text"
+          class="form-control"
+          row="4"
+          placeholder="Please Enter Message"
+        ></textarea>
+      </div>
+      <div class="col-md-12 mb-3">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
